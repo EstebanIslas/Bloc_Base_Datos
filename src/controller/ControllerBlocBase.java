@@ -42,6 +42,8 @@ public class ControllerBlocBase {
                 anteriorArchivo();
             } else if (e.getSource() == viewBlocBase.jb_siguiente) {
                 siguienteArchivo();
+            }else if (e.getSource() == viewBlocBase.jb_limpiar) {
+                limpiarJTF();
             }
         }
     };
@@ -51,6 +53,7 @@ public class ControllerBlocBase {
         this.viewBlocBase = viewBlocBase;
         InitComponets();
         this.viewBlocBase.jb_guardar.addActionListener(actionListener);
+        this.viewBlocBase.jb_limpiar.addActionListener(actionListener);
         this.viewBlocBase.jb_primero.addActionListener(actionListener);
         this.viewBlocBase.jb_ultimo.addActionListener(actionListener);
         this.viewBlocBase.jb_anterior.addActionListener(actionListener);
@@ -73,7 +76,7 @@ public class ControllerBlocBase {
                 modelBlocBase.primerRegistro(String.valueOf(contenido));
 
                 viewBlocBase.jtf_nombre.setText(modelBlocBase.getNombre());
-                viewBlocBase.jtf_apellido.setText(modelBlocBase.getApellido());
+                viewBlocBase.jtf_correo.setText(modelBlocBase.getCorreo());
                 bufferedReader.close();
             } catch (FileNotFoundException ex) {
                 System.err.println("File Not Found!! " + ex.getMessage());
@@ -94,12 +97,12 @@ public class ControllerBlocBase {
                     contenido.append(row);
                     contenido.append("\n");
                 }
-                //viewRegistro.JTF_Name.setText(modelRegistro.getName());
+                //viewBlocBase.JTF_Name.setText(modelBlocBase.getName());
 
                 modelBlocBase.ultimoRegistro(String.valueOf(contenido));
 
                 viewBlocBase.jtf_nombre.setText(modelBlocBase.getNombre());
-                viewBlocBase.jtf_apellido.setText(modelBlocBase.getApellido());
+                viewBlocBase.jtf_correo.setText(modelBlocBase.getCorreo());
                 bufferedReader.close();
             } catch (FileNotFoundException ex) {
                 System.err.println("File Not Found!! " + ex.getMessage());
@@ -129,7 +132,7 @@ public class ControllerBlocBase {
                 modelBlocBase.sigultRegistro(String.valueOf(contenido), contador);
 
                 viewBlocBase.jtf_nombre.setText(modelBlocBase.getNombre());
-                viewBlocBase.jtf_apellido.setText(modelBlocBase.getApellido());
+                viewBlocBase.jtf_correo.setText(modelBlocBase.getCorreo());
                 bufferedReader.close();
             } catch (FileNotFoundException ex) {
                 System.err.println("File Not Found!! " + ex.getMessage());
@@ -150,7 +153,7 @@ public class ControllerBlocBase {
                     contenido.append(row);
                     contenido.append("\n");
                 }
-                //viewRegistro.JTF_Name.setText(modelRegistro.getName());
+                //viewBlocBase.JTF_Name.setText(modelBlocBase.getName() contador);
                 System.out.println(contador);
                 
                 //modelBlocBase.setContador(modelBlocBase.getContador() + 1);
@@ -160,7 +163,7 @@ public class ControllerBlocBase {
                 modelBlocBase.sigultRegistro(String.valueOf(contenido), contador);
 
                 viewBlocBase.jtf_nombre.setText(modelBlocBase.getNombre());
-                viewBlocBase.jtf_apellido.setText(modelBlocBase.getApellido());
+                viewBlocBase.jtf_correo.setText(modelBlocBase.getCorreo());
                 bufferedReader.close();
             } catch (FileNotFoundException ex) {
                 System.err.println("File Not Found!! " + ex.getMessage());
@@ -179,7 +182,7 @@ public class ControllerBlocBase {
             File file = new File(modelBlocBase.getPath());
             FileWriter fileWriter = new FileWriter(file, true);
             try (PrintWriter printWriter = new PrintWriter(fileWriter)) {
-                printWriter.println(modelBlocBase.separarCadena(viewBlocBase.jtf_nombre.getText(), viewBlocBase.jtf_apellido.getText()));
+                printWriter.println(modelBlocBase.separarCadena(viewBlocBase.jtf_nombre.getText(), viewBlocBase.jtf_correo.getText()));
                 //printWriter.println(modelBlocBase.getNombre() + "," + modelBlocBase.getApellido());
                 JOptionPane.showMessageDialog(null, "Archivo Almacenado!!");
                 printWriter.close();
@@ -189,6 +192,11 @@ public class ControllerBlocBase {
         } catch (IOException ex) {
             JOptionPane.showMessageDialog(null, "Error I/O Operation " + ex.getMessage());
         }
+    }
+    
+    public void limpiarJTF(){
+        viewBlocBase.jtf_nombre.setText("");
+        viewBlocBase.jtf_correo.setText("");
     }
 
     public void InitComponets() {

@@ -48,13 +48,13 @@
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace min="-2" pref="37" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="1" attributes="0">
-                              <Component id="jl_apellido" min="-2" max="-2" attributes="0"/>
+                              <Component id="jl_correo" min="-2" max="-2" attributes="0"/>
                               <Component id="jl_nombre" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" max="-2" attributes="0">
                               <Component id="jtf_nombre" max="32767" attributes="0"/>
-                              <Component id="jtf_apellido" min="-2" pref="106" max="-2" attributes="0"/>
+                              <Component id="jtf_correo" min="-2" pref="106" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
@@ -67,13 +67,16 @@
                       </Group>
                   </Group>
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" attributes="0">
-                          <EmptySpace min="-2" pref="66" max="-2" attributes="0"/>
-                          <Component id="jb_guardar" min="-2" pref="115" max="-2" attributes="0"/>
-                      </Group>
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
                           <Component id="jb_ultimo" min="-2" pref="97" max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace min="-2" pref="66" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="jb_limpiar" min="-2" pref="115" max="-2" attributes="0"/>
+                              <Component id="jb_guardar" min="-2" pref="115" max="-2" attributes="0"/>
+                          </Group>
                       </Group>
                   </Group>
                   <EmptySpace pref="28" max="32767" attributes="0"/>
@@ -87,6 +90,8 @@
                       <Group type="102" attributes="0">
                           <EmptySpace min="-2" pref="64" max="-2" attributes="0"/>
                           <Component id="jb_guardar" min="-2" pref="36" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="jb_limpiar" min="-2" pref="40" max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace min="-2" pref="72" max="-2" attributes="0"/>
@@ -96,12 +101,12 @@
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="1" attributes="0">
-                              <Component id="jl_apellido" min="-2" max="-2" attributes="0"/>
-                              <Component id="jtf_apellido" min="-2" max="-2" attributes="0"/>
+                              <Component id="jl_correo" min="-2" max="-2" attributes="0"/>
+                              <Component id="jtf_correo" min="-2" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                   </Group>
-                  <EmptySpace pref="115" max="32767" attributes="0"/>
+                  <EmptySpace pref="87" max="32767" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="jb_primero" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="jb_ultimo" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -128,7 +133,7 @@
             <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
           </AuxValues>
         </Component>
-        <Component class="javax.swing.JLabel" name="jl_apellido">
+        <Component class="javax.swing.JLabel" name="jl_correo">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Arial" size="12" style="1"/>
@@ -136,7 +141,7 @@
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Apellido:"/>
+            <Property name="text" type="java.lang.String" value="Correo:"/>
           </Properties>
           <AuxValues>
             <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
@@ -155,7 +160,7 @@
             <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
           </AuxValues>
         </Component>
-        <Component class="javax.swing.JTextField" name="jtf_apellido">
+        <Component class="javax.swing.JTextField" name="jtf_correo">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Arial" size="11" style="0"/>
@@ -203,6 +208,14 @@
         <Component class="javax.swing.JButton" name="jb_siguiente">
           <Properties>
             <Property name="text" type="java.lang.String" value="Siguiente"/>
+          </Properties>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+          </AuxValues>
+        </Component>
+        <Component class="javax.swing.JButton" name="jb_limpiar">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Nuevo"/>
           </Properties>
           <AuxValues>
             <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>

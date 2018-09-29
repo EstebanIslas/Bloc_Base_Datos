@@ -13,7 +13,7 @@ import javax.swing.JOptionPane;
 public class ModelBlocBase {
 
     private String nombre = "";
-    private String apellido = "";
+    private String correo = "";
     private String path = "C:\\Users\\USUARIO\\Pictures\\base.csv";
     private int contador;
 
@@ -33,12 +33,12 @@ public class ModelBlocBase {
         this.nombre = nombre;
     }
 
-    public String getApellido() {
-        return apellido;
+    public String getCorreo() {
+        return correo;
     }
 
-    public void setApellido(String apellido) {
-        this.apellido = apellido;
+    public void setCorreo(String correo) {
+        this.correo = correo;
     }
 
     public String getPath() {
@@ -60,7 +60,7 @@ public class ModelBlocBase {
         String[] saltoLinea = separar.split("\n");
         String[] sep_coma = saltoLinea[0].split(",");
         this.setNombre(sep_coma[0]);
-        this.setApellido(sep_coma[1]);
+        this.setCorreo(sep_coma[1]);
         
         /*nombre = resul2[0];
         apellido += resul2[1];
@@ -74,7 +74,7 @@ public class ModelBlocBase {
         int i = (saltoLinea.length - 1);
         String[] sep_coma = saltoLinea[i].split(",");
         this.setNombre(sep_coma[0]);
-        this.setApellido(sep_coma[1]);
+        this.setCorreo(sep_coma[1]);
         System.out.println(i);
         
     }
@@ -86,7 +86,7 @@ public class ModelBlocBase {
         String[] sep_coma = saltoLinea[contador].split(",");
         int i = (saltoLinea.length - 1);
         this.setNombre(sep_coma[0]);
-        this.setApellido(sep_coma[1]);
+        this.setCorreo(sep_coma[1]);
         } catch(Exception err){
             System.err.println("error "+err.getMessage());
             JOptionPane.showMessageDialog(null, "Error Model: " + err.getMessage());

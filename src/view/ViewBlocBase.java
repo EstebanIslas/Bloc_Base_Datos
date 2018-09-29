@@ -29,14 +29,15 @@ public class ViewBlocBase extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         jl_nombre = new javax.swing.JLabel();
-        jl_apellido = new javax.swing.JLabel();
+        jl_correo = new javax.swing.JLabel();
         jtf_nombre = new javax.swing.JTextField();
-        jtf_apellido = new javax.swing.JTextField();
+        jtf_correo = new javax.swing.JTextField();
         jb_guardar = new javax.swing.JButton();
         jb_primero = new javax.swing.JButton();
         jb_ultimo = new javax.swing.JButton();
         jb_anterior = new javax.swing.JButton();
         jb_siguiente = new javax.swing.JButton();
+        jb_limpiar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -46,15 +47,15 @@ public class ViewBlocBase extends javax.swing.JFrame {
         jl_nombre.setForeground(new java.awt.Color(255, 255, 255));
         jl_nombre.setText("Nombre:");
 
-        jl_apellido.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-        jl_apellido.setForeground(new java.awt.Color(255, 255, 255));
-        jl_apellido.setText("Apellido:");
+        jl_correo.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        jl_correo.setForeground(new java.awt.Color(255, 255, 255));
+        jl_correo.setText("Correo:");
 
         jtf_nombre.setFont(new java.awt.Font("Arial", 0, 11)); // NOI18N
         jtf_nombre.setForeground(new java.awt.Color(51, 51, 51));
 
-        jtf_apellido.setFont(new java.awt.Font("Arial", 0, 11)); // NOI18N
-        jtf_apellido.setForeground(new java.awt.Color(51, 51, 51));
+        jtf_correo.setFont(new java.awt.Font("Arial", 0, 11)); // NOI18N
+        jtf_correo.setForeground(new java.awt.Color(51, 51, 51));
 
         jb_guardar.setText("Guardar");
 
@@ -66,6 +67,8 @@ public class ViewBlocBase extends javax.swing.JFrame {
 
         jb_siguiente.setText("Siguiente");
 
+        jb_limpiar.setText("Nuevo");
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -75,12 +78,12 @@ public class ViewBlocBase extends javax.swing.JFrame {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(37, 37, 37)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jl_apellido)
+                            .addComponent(jl_correo)
                             .addComponent(jl_nombre))
                         .addGap(18, 18, 18)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(jtf_nombre)
-                            .addComponent(jtf_apellido, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(jtf_correo, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(jb_primero, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -90,11 +93,13 @@ public class ViewBlocBase extends javax.swing.JFrame {
                         .addComponent(jb_siguiente, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(66, 66, 66)
-                        .addComponent(jb_guardar, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jb_ultimo, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(jb_ultimo, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(66, 66, 66)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jb_limpiar, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jb_guardar, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addContainerGap(28, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -103,7 +108,9 @@ public class ViewBlocBase extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(64, 64, 64)
-                        .addComponent(jb_guardar, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(jb_guardar, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jb_limpiar, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(72, 72, 72)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -111,9 +118,9 @@ public class ViewBlocBase extends javax.swing.JFrame {
                             .addComponent(jtf_nombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jl_apellido)
-                            .addComponent(jtf_apellido, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 115, Short.MAX_VALUE)
+                            .addComponent(jl_correo)
+                            .addComponent(jtf_correo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 87, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jb_primero)
                     .addComponent(jb_ultimo)
@@ -175,12 +182,13 @@ public class ViewBlocBase extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     public javax.swing.JButton jb_anterior;
     public javax.swing.JButton jb_guardar;
+    public javax.swing.JButton jb_limpiar;
     public javax.swing.JButton jb_primero;
     public javax.swing.JButton jb_siguiente;
     public javax.swing.JButton jb_ultimo;
-    public javax.swing.JLabel jl_apellido;
+    public javax.swing.JLabel jl_correo;
     public javax.swing.JLabel jl_nombre;
-    public javax.swing.JTextField jtf_apellido;
+    public javax.swing.JTextField jtf_correo;
     public javax.swing.JTextField jtf_nombre;
     // End of variables declaration//GEN-END:variables
 }
