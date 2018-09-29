@@ -4,6 +4,8 @@
  */
 package model;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author ESTEBAN
@@ -13,7 +15,16 @@ public class ModelBlocBase {
     private String nombre = "";
     private String apellido = "";
     private String path = "C:\\Users\\USUARIO\\Pictures\\base.csv";
+    private int contador;
 
+    public int getContador() {
+        return contador;
+    }
+
+    public void setContador(int contador) {
+        this.contador = contador;
+    }
+    
     public String getNombre() {
         return nombre;
     }
@@ -64,7 +75,21 @@ public class ModelBlocBase {
         String[] sep_coma = saltoLinea[i].split(",");
         this.setNombre(sep_coma[0]);
         this.setApellido(sep_coma[1]);
+        System.out.println(i);
         
     }
-
+    
+    public void sigultRegistro(String cadena, int contador){
+        try{
+        String separar = cadena;
+        String[] saltoLinea = separar.split("\n");
+        String[] sep_coma = saltoLinea[contador].split(",");
+        int i = (saltoLinea.length - 1);
+        this.setNombre(sep_coma[0]);
+        this.setApellido(sep_coma[1]);
+        } catch(Exception err){
+            System.err.println("error "+err.getMessage());
+            JOptionPane.showMessageDialog(null, "Error Model: " + err.getMessage());
+        }
+    }
 }
